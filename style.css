@@ -2,26 +2,36 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance:none;
+}
+
+
 
 html, body {
     height: 100vh;
     width: 100vw;
-    /* box-sizing: border-box; */
+    box-sizing: border-box;
 }
 
 /* navigation section */
 .navbar {
     height: 40px;
-    background-color: red;
+    background-color: rgb(255, 255, 255);
     position: absolute;
-    top: 0;
+    top: 10px;
     width: 100%;
 }
 
 .navbar_left {
     /* border: solid black; */
-    background-color: orange;
+    background-color: rgb(255, 255, 255);
     height: 100%;
     text-align: center;
     display: inline-block;
@@ -33,7 +43,17 @@ html, body {
     height: 100%;
     line-height: 40px;
     margin-left: 20px;
-    margin-right: 20px;
+    margin-right: 1px;
+    font-size: 14px;
+}
+
+.navbar_left-link > a {
+    text-decoration: none;
+    color: black;
+}
+
+.navbar_left-link > a:hover {
+    text-decoration: underline;
 }
 
 .navbar_right {
@@ -47,7 +67,11 @@ html, body {
     display: inline-block;
     margin-left: 20px;
     margin-right: 20px;
-    line-height: 40px;
+    /* margin-bottom: ; */
+    height: 100%;
+    vertical-align: top;
+    line-height: 30px;
+
 }
 
 .navbar_right-glyph {
@@ -56,19 +80,37 @@ html, body {
     margin-left: 20px;
     margin-right: 20px;
     line-height: 40px;
+    color: rgba(0, 0, 0, 0.6);
+    vertical-align: top;
+    height: 100%;
 }
 
 .navbar_right-avatar {
-    /* border: solid black; */
     display: inline-block;
     margin-left: 20px;
     margin-right: 20px;
-    line-height: 40px;}
+    line-height: 60px;
+    margin-top: 4px;
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+}
+
+.navbar_right-avatar > img {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
 
 /* CONTAINER */
 .container {
     height: 100%;
-    background-color: rgb(0, 255, 64);
+    background-color: rgb(255, 255, 255);
     overflow: hidden;
 }
 
@@ -99,15 +141,18 @@ html, body {
     border-radius: 20px;
     padding-left: 35px;
     font-size: 17px;
+    border: none;
+    outline: none;
+    box-shadow: 0px 1px 5px #c9c9c9;
 }
 
 .container_search-left {
     /* border: solid black; */
     position: absolute;
-    top: 52%;
-    left: 7px;
+    top: 50%;
+    left: 15px;
     transform: translateY(-50%);
-    font-size: 17px;
+    font-size: 13px;
     color: rgba(0, 0, 0, .5);
 }
 
@@ -123,28 +168,43 @@ html, body {
 }
 
 .container_buttons-search {
-    background-color: grey;
+    background-color: #f2f2f2;
     height: 100%;
     margin-right: 10px;
     display: inline-block;
     /* border: dotted black; */
     padding: 0 10px;
     line-height: 35px;
+    color: rgba(0, 0, 0, 0.514);
+    
+}
+
+.container_buttons-search:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 2px #888888;
+    color: black;
+    
 }
 
 .container_buttons-lucky {
-    background-color: grey;
+    background-color: #f2f2f2;
     height: 100%;
     display: inline-block;
-    /* border: dotted black; */
     padding: 0 10px;
     line-height: 35px;
+    color: rgba(0, 0, 0, 0.514);
+}
+
+.container_buttons-lucky:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 2px #888888;
+    color: black;
 }
 
 /* Footer */
 .footer {
     height: 40px;
-    background-color: red;
+    background-color: #f2f2f2;
     position: absolute;
     bottom: 0;
     width: 100%;
